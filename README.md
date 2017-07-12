@@ -1,24 +1,24 @@
-# decompte_temps
-# programme simulant une pointeuse pour comptabiliser le temps de travail
+""" decompte_temps
+programme simulant une pointeuse pour comptabiliser le temps de travail
 
-# pour python 3.x
-# -*- coding: cp1252 -*- NON
+pour python 3.x
+-*- coding: cp1252 -*- NON """
 
 #
 from time import *
 from tkinter import *
-#from tkFont import *
+"""from tkFont import * """
 
 liste_instants=[]
 
 #
 def ajout_instant (la_liste) :
-#def ajout_instant () :
+""" def ajout_instant () : """
     "ajout d'un instant dans une liste"
-#    liste_instants.append(time())
-#    print liste_instants
+"""    liste_instants.append(time())
+    print liste_instants """
     la_liste.append(time())
-#    print la_liste
+"""    print la_liste """
 
 def conversion_hms (duree) :
     'convertit la durée donnée en secondes en heures, minutes, secondes'
@@ -62,16 +62,16 @@ def texte_bouton (la_liste) :
         texte = "interrompre le décompte du temps de travail"
     return texte
 
-#def afficher_horloge (la_liste) :
-#    horloge.configure(text=conversion_hms(temps_travail(la_liste)))
+""" def afficher_horloge (la_liste) :
+    horloge.configure(text=conversion_hms(temps_travail(la_liste))) """
 def afficher_horloge () :
-#    horloge.configure(text=conversion_hms(temps_travail(liste_instants)))
+"""    horloge.configure(text=conversion_hms(temps_travail(liste_instants))) """
     i=0
     while i<30 :
             horloge.configure(text=conversion_hms(temps_travail(liste_instants)))
-#            sleep(0.5)
+"""            sleep(0.5) """
             i=i+1
-#    fenetre.after(500,afficher_horloge)
+"""    fenetre.after(500,afficher_horloge) """
 
 #
 def appui_bouton () :
@@ -84,40 +84,40 @@ fenetre = Tk()
 fenetre.title("Décompte du temps de travail")
 
 #
-#type_caract=Font(size=20)
+""" type_caract=Font(size=20) """
 type_caract="20"
 horloge = Label(fenetre,text=conversion_hms(0),font=type_caract)
-#,width=18)
+""" ,width=18) """
 horloge.grid(row=1,column=1)
 bout_affich_horlog = Button(fenetre,text='afficher le temps de travail'\
                             ,command=afficher_horloge)
 bout_affich_horlog.grid(row=1,column=2)
-#bouton = Button(fenetre,text=texte_bouton(liste_instants)\
-#                ,command=ajout_instant(liste_instants))
-#bouton = Button(fenetre,text=texte_bouton(liste_instants),command=ajout_instant())
+""" bouton = Button(fenetre,text=texte_bouton(liste_instants)\
+                ,command=ajout_instant(liste_instants))
+bouton = Button(fenetre,text=texte_bouton(liste_instants),command=ajout_instant()) """
 bouton = Button(fenetre,text=texte_bouton(liste_instants)\
                 ,command=appui_bouton)
 bouton.grid(row=2,column=1,columnspan=2)
-#fenetre.bind('<Button-1>',afficher_horloge)
-#horloge.bind('<Button-1>',afficher_horloge(liste_instants))
+""" fenetre.bind('<Button-1>',afficher_horloge)
+horloge.bind('<Button-1>',afficher_horloge(liste_instants)) """
 
 #
 fenetre.mainloop()
 
-#fenetre.destroy()
-#
-#ma_liste=[]
-#print temps_travail(ma_liste)
-#ajout_instant(ma_liste)
-#print ma_liste
-#sleep(2)
-#ajout_instant(ma_liste)
-#print temps_travail(ma_liste)
-#sleep(1.44)
-#ajout_instant(ma_liste)
-#sleep(2.68)
-#print ma_liste
-#print temps_travail(ma_liste)
-#une_duree = 7589
-#print conversion_hms (une_duree), une_duree
-#print liste_instants
+"""fenetre.destroy()
+
+ma_liste=[]
+print temps_travail(ma_liste)
+ajout_instant(ma_liste)
+print ma_liste
+sleep(2)
+ajout_instant(ma_liste)
+print temps_travail(ma_liste)
+sleep(1.44)
+ajout_instant(ma_liste)
+sleep(2.68)
+print ma_liste
+print temps_travail(ma_liste)
+une_duree = 7589
+print conversion_hms (une_duree), une_duree
+print liste_instants """
